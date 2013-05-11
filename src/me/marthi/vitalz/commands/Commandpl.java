@@ -16,8 +16,8 @@ public class Commandpl implements CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(CommandSender arg0, Command arg1, String arg2,
-			String[] arg3) {
+	public boolean onCommand(CommandSender sender, Command command,
+			String label, String[] args) {
 		// TODO Auto-generated method stub
 		return false;
 	}

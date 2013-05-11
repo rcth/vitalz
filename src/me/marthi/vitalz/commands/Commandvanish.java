@@ -18,16 +18,16 @@ public class Commandvanish implements CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(CommandSender arg0, Command arg1, String arg2,
-			String[] arg3) {
-		Player player = (Player) arg0;
-		if (arg0 instanceof Player) {
-			if (arg2 == null) {
+	public boolean onCommand(CommandSender sender, Command command,
+			String label, String[] args) {
+		Player player = (Player) sender;
+		if (sender instanceof Player) {
+			if (args[0] == null) {
 				for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 					p.hidePlayer(player);
 				}
 			} else {
-				Player target = Bukkit.getPlayer(arg2);
+				Player target = Bukkit.getPlayer(args[0]);
 				if (target != null) {
 					for (Player t : Bukkit.getServer().getOnlinePlayers()) {
 						t.hidePlayer(target);
