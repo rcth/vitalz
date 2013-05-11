@@ -7,6 +7,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class Commandhelp implements CommandExecutor {
+	
+	@SuppressWarnings("unused")
 	private vitalz plugin;
 
 	public Commandhelp(vitalz plugin) {

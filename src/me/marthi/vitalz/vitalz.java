@@ -12,6 +12,7 @@ public class vitalz extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+		@SuppressWarnings("unused")
 		final PluginManager pm = this.getServer().getPluginManager();
 
 		System.out.println(ChatColor.RED + "[Vitalz]" + ChatColor.GOLD

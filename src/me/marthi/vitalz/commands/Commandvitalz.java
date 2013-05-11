@@ -2,7 +2,6 @@ package me.marthi.vitalz.commands;
 
 import me.marthi.vitalz.vitalz;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
