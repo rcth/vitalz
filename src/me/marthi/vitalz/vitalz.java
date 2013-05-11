@@ -1,5 +1,9 @@
 package me.marthi.vitalz;
 
+import me.marthi.vitalz.commands.Commandhelp;
+import me.marthi.vitalz.commands.Commandpl;
+import me.marthi.vitalz.commands.Commandvitalz;
+
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
