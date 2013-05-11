@@ -1,5 +1,6 @@
 package me.marthi.vitalz;
 
+import me.marthi.vitalz.commands.Commandfly;
 import me.marthi.vitalz.commands.Commandhelp;
 import me.marthi.vitalz.commands.Commandpl;
 import me.marthi.vitalz.commands.Commandvanish;
@@ -24,6 +25,7 @@ public class vitalz extends JavaPlugin {
 		getCommand("help").setExecutor(new Commandhelp(this));
 		getCommand("vitalz").setExecutor(new Commandvitalz(this));
 		getCommand("vanish").setExecutor(new Commandvanish(this));
+		getCommand("fly").setExecutor(new Commandfly(this));
 		
 
 		super.onEnable();
