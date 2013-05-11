@@ -2,6 +2,7 @@ package me.marthi.vitalz;
 
 import me.marthi.vitalz.commands.Commandhelp;
 import me.marthi.vitalz.commands.Commandpl;
+import me.marthi.vitalz.commands.Commandvanish;
 import me.marthi.vitalz.commands.Commandvitalz;
 
 import org.bukkit.plugin.PluginManager;
@@ -22,6 +23,8 @@ public class vitalz extends JavaPlugin {
 		getCommand("pl").setExecutor(new Commandpl(this));
 		getCommand("help").setExecutor(new Commandhelp(this));
 		getCommand("vitalz").setExecutor(new Commandvitalz(this));
+		getCommand("vanish").setExecutor(new Commandvanish(this));
+		
 
 		super.onEnable();
 	}
