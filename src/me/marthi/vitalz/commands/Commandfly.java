@@ -14,7 +14,6 @@ import org.bukkit.entity.Player;
 
 public class Commandfly implements CommandExecutor {
 	
-	@SuppressWarnings("unused")
 	private vitalz plugin;
 
 	public Commandfly(vitalz plugin) {
@@ -44,14 +43,18 @@ public class Commandfly implements CommandExecutor {
 					allowedFly.remove(player);
 				} else {
 					Player target = Bukkit.getPlayer(args[0]);
-					if (allowedFly.contains(target)) {
-						target.setFlying(false);
-						target.setAllowFlight(false);
-						allowedFly.remove(target);
+					if (target != null) {
+						if (allowedFly.contains(target)) {
+							target.setFlying(false);
+							target.setAllowFlight(false);
+							allowedFly.remove(target);
+						} else {
+							target.setAllowFlight(true);
+							target.setFlying(true);
+							allowedFly.add(target);
+						}
 					} else {
-						target.setAllowFlight(true);
-						target.setFlying(true);
-						allowedFly.add(target);
+						player.sendMessage(ChatColor.RED + "That player could not be found!");
 					}
 				}
 			} else {
