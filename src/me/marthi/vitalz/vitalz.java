@@ -9,12 +9,16 @@ public class vitalz extends JavaPlugin {
 	public void onEnable() {
 		final PluginManager pm = this.getServer().getPluginManager();
 		
+		
+		System.out.println("[Vitalz] version [" + this.getDescription().getVersion() + "] is enabled.");
+		
+		
 		super.onEnable();
 	}
 
 	@Override
 	public void onDisable() {
-		// TODO Auto-generated method stub
+		System.out.println("[Vitalz] version [" + this.getDescription().getVersion() + "] is disabled.");
 		super.onDisable();
 	}
 
