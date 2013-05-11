@@ -34,6 +34,8 @@ public class Commandvanish implements CommandExecutor {
 						for (Player t : Bukkit.getServer().getOnlinePlayers()) {
 							t.hidePlayer(target);
 						}
+					} else {
+						player.sendMessage(ChatColor.RED + "That player could not be found!");
 					}
 				}
 			} else {
