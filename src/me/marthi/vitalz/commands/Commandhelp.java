@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 
 public class Commandhelp implements CommandExecutor {
 	private vitalz plugin;
-	
+
 	public Commandhelp(vitalz plugin) {
 		this.plugin = plugin;
 	}

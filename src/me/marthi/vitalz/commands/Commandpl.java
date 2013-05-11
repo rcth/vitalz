@@ -7,9 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class Commandpl implements CommandExecutor {
-	
+
 	private vitalz plugin;
-	
+
 	public Commandpl(vitalz plugin) {
 		this.plugin = plugin;
 	}
