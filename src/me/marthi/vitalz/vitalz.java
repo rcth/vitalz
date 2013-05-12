@@ -3,6 +3,7 @@ package me.marthi.vitalz;
 import me.marthi.vitalz.commands.Commandfly;
 import me.marthi.vitalz.commands.Commandhelp;
 import me.marthi.vitalz.commands.Commandpl;
+import me.marthi.vitalz.commands.Commandtime;
 import me.marthi.vitalz.commands.Commandvanish;
 import me.marthi.vitalz.commands.Commandvitalz;
 
@@ -26,6 +27,7 @@ public class vitalz extends JavaPlugin {
 		getCommand("vitalz").setExecutor(new Commandvitalz(this));
 		getCommand("vanish").setExecutor(new Commandvanish(this));
 		getCommand("fly").setExecutor(new Commandfly(this));
+		getCommand("time").setExecutor(new Commandtime(this));
 		
 		System.out.println(ChatColor.RED + "[Vitalz]" + ChatColor.GOLD + "Commands registered");
 
