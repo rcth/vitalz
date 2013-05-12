@@ -36,9 +36,8 @@ public class vitalz extends JavaPlugin {
 		
 		pm.registerEvents(new LoginListener(), this);
 		
-		
 		this.saveDefaultConfig();
-		this.getConfig().getStringList("motd");
+		MOTD = this.getConfig().getStringList("motd");
 
 		super.onEnable();
 	}
