@@ -3,3 +3,23 @@ main: me.marthi.vitalz.vitalz
 version: 1
 authors: ["rcth", "ipsq"]
 description: Vitalz is the new Bukkit-core plugin with alot of useful commands
+commands:
+    pl:
+      description: Show you a list of plugins used on the server
+      usage: /<command>
+      aliases: plugins
+    help:
+      description: View a list of availible commands
+      usage: /<command> [page]
+    vitalz:
+      description: Shows information about this plugin
+      usage: /<command>
+    vanish:
+      description: Make a player invisible
+      usage: /<command> [player]
+    fly:
+      description: Woosh, fly in the air!
+      usage: /<command> [player]
+    time:
+      description: Set the time in a specific world
+      usage: /<command> [day/morning/night/timestep] [world]
