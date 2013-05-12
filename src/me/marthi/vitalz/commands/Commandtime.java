@@ -36,6 +36,11 @@ public class Commandtime implements CommandExecutor {
 							player.getWorld().setTime(0);
 							player.sendMessage(ChatColor.AQUA + "Time set to 0.");
 						}
+					} else if (args[0].equalsIgnoreCase("night")) {
+						if (args[1] == null) {
+							player.getWorld().setTime(0);
+							player.sendMessage(ChatColor.AQUA + "Time set to 0.");
+						}
 					}
 				}
 			} else {
