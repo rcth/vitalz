@@ -34,7 +34,7 @@ public class vitalz extends JavaPlugin {
 		getCommand("fly").setExecutor(new Commandfly(this));
 		getCommand("time").setExecutor(new Commandtime(this));
 		getCommand("top").setExecutor(new Commandtop(this));
-		getCommand("ping").setExcecutor(new Commandping(this));
+		getCommand("ping").setExecutor(new Commandping(this));
 
 		System.out.println("[Vitalz] Commands registered!");
 
