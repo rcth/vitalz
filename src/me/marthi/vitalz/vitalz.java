@@ -1,5 +1,6 @@
 package me.marthi.vitalz;
 
+import java.util.Arrays;
 import java.util.List;
 
 import me.marthi.vitalz.commands.Commandfly;
@@ -38,6 +39,8 @@ public class vitalz extends JavaPlugin {
 		
 		this.saveDefaultConfig();
 		MOTD = this.getConfig().getStringList("motd");
+		
+		
 
 		super.onEnable();
 	}
