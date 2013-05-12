@@ -19,7 +19,6 @@ public class vitalz extends JavaPlugin {
 		final PluginManager pm = this.getServer().getPluginManager();
 
 		System.out.println("[Vitalz] Version [" + this.getDescription().getVersion() + "] is enabled.");
-		System.out.println("[Vitalz]" + "Version [" + this.getDescription().getVersion() + "] is enabled.");
 
 		getCommand("pl").setExecutor(new Commandpl(this));
 		getCommand("help").setExecutor(new Commandhelp(this));
@@ -36,7 +35,6 @@ public class vitalz extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		System.out.println("[Vitalz] Version [" + this.getDescription().getVersion() + "] is disabled.");
-		System.out.println("[Vitalz]" + "Version [" + this.getDescription().getVersion() + "] is disabled.");
 		super.onDisable();
 	}
 
