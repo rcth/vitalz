@@ -54,5 +54,4 @@ public class vitalz extends JavaPlugin {
 				+ this.getDescription().getVersion() + "] is disabled.");
 		super.onDisable();
 	}
-
 }
