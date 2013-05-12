@@ -25,8 +25,8 @@ public class Commandtop implements CommandExecutor {
 			if(player.hasPermission("vitalz.top")) {
 				Location loc = player.getPlayer().getLocation();
 				int x = loc.getBlockX();
-				int y = loc.getBlockY();
 				int z = loc.getBlockZ();
+				int y = loc.getWorld().getHighestBlockYAt(x, z);
 			} else {
 				player.sendMessage(ChatColor.RED + "You do not have access to that command!");
 				player.sendMessage(ChatColor.RED + "If you believe this is incorrect, contact an operator.");
