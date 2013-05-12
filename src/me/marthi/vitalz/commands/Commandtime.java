@@ -78,9 +78,34 @@ public class Commandtime implements CommandExecutor {
 						+ "If you believe this is incorrect, contact an operator.");
 			}
 		} else {
-			System.out
-					.println("A non-player tried to execute a player only command!");
-			System.out.println("The command was /time");
+			if (args[1] == null) {
+				System.out.println("You did not specify a world!");
+			} else {
+				World targetWorld = plugin.getServer().getWorld(args[1]);
+				if (targetWorld != null) {
+					if ((args[0].equalsIgnoreCase("day"))
+							|| (args[0].equalsIgnoreCase("morning"))) {
+						targetWorld.setTime(0);
+						System.out.println("Time set to 0 in world: "
+								+ targetWorld.toString() + ".");
+					} else if ((args[0].equalsIgnoreCase("night"))
+							|| (args[0].equalsIgnoreCase("evening"))) {
+						targetWorld.setTime(12000);
+						System.out.println("Time set to 12000 in world: "
+								+ targetWorld.toString() + ".");
+					} else if (isInt(args[0])) {
+						int timeArgument = Integer.parseInt(args[0]);
+						if (timeArgument <= 24000 && timeArgument >= 0) {
+							targetWorld.setTime(timeArgument);
+							System.out.println("Time set to " + timeArgument
+									+ ".");
+						}
+					}
+				} else {
+					System.out
+							.println("World: " + args[1] + ", was not found!");
+				}
+			}
 		}
 		return false;
 	}
