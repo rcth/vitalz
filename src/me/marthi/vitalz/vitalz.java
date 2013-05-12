@@ -16,14 +16,15 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class vitalz extends JavaPlugin {
-	
+
 	public List<String> MOTD;
 
 	@Override
 	public void onEnable() {
 		final PluginManager pm = this.getServer().getPluginManager();
 
-		System.out.println("[Vitalz] Version [" + this.getDescription().getVersion() + "] is enabled.");
+		System.out.println("[Vitalz] Version ["
+				+ this.getDescription().getVersion() + "] is enabled.");
 
 		getCommand("pl").setExecutor(new Commandpl(this));
 		getCommand("help").setExecutor(new Commandhelp(this));
@@ -32,22 +33,21 @@ public class vitalz extends JavaPlugin {
 		getCommand("fly").setExecutor(new Commandfly(this));
 		getCommand("time").setExecutor(new Commandtime(this));
 		getCommand("top").setExecutor(new Commandtop(this));
-		
+
 		System.out.println("[Vitalz] Commands registered!");
-		
+
 		pm.registerEvents(new LoginListener(), this);
-		
+
 		this.saveDefaultConfig();
 		MOTD = this.getConfig().getStringList("motd");
-		
-		
 
 		super.onEnable();
 	}
 
 	@Override
 	public void onDisable() {
-		System.out.println("[Vitalz] Version [" + this.getDescription().getVersion() + "] is disabled.");
+		System.out.println("[Vitalz] Version ["
+				+ this.getDescription().getVersion() + "] is disabled.");
 		super.onDisable();
 	}
 
