@@ -15,7 +15,6 @@ public class Commandpl implements CommandExecutor {
 		this.plugin = plugin;
 	}
 
-	@Override
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
 		// TODO Auto-generated method stub
