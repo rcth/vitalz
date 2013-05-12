@@ -8,6 +8,8 @@ import me.marthi.vitalz.commands.Commandpl;
 import me.marthi.vitalz.commands.Commandtime;
 import me.marthi.vitalz.commands.Commandvanish;
 import me.marthi.vitalz.commands.Commandvitalz;
+import me.marthi.vitalz.commands.Commandtop;
+
 import me.marthi.vitalz.listeners.LoginListener;
 
 import org.bukkit.plugin.PluginManager;
@@ -29,6 +31,7 @@ public class vitalz extends JavaPlugin {
 		getCommand("vanish").setExecutor(new Commandvanish(this));
 		getCommand("fly").setExecutor(new Commandfly(this));
 		getCommand("time").setExecutor(new Commandtime(this));
+		getCommand("top").setExecutor(new Commandtop(this));
 		
 		System.out.println("[Vitalz] Commands registered!");
 		
