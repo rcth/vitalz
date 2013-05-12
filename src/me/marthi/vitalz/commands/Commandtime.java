@@ -2,7 +2,9 @@ package me.marthi.vitalz.commands;
 
 import me.marthi.vitalz.vitalz;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,7 +12,6 @@ import org.bukkit.entity.Player;
 
 public class Commandtime implements CommandExecutor {
 	
-	@SuppressWarnings("unused")
 	private vitalz plugin;
 
 	public Commandtime(vitalz plugin) {
@@ -34,6 +35,14 @@ public class Commandtime implements CommandExecutor {
 						if (args[1] == null) {
 							player.getWorld().setTime(0);
 							player.sendMessage(ChatColor.AQUA + "Time set to 0.");
+						} else {
+							World targetWorld = plugin.getServer().getWorld(args[1]);
+							if (targetWorld != null) {
+								targetWorld.setTime(0);
+								player.sendMessage(ChatColor.AQUA + "Time set to 0 in world " + targetWorld.toString() + ".");
+							} else {
+								player.sendMessage(ChatColor.RED + "The world: " + args[1].toString() + " could not be found!");
+							}
 						}
 					} else if (args[0].equalsIgnoreCase("night")) {
 						if (args[1] == null) {
@@ -42,10 +51,13 @@ public class Commandtime implements CommandExecutor {
 						}
 					} else if (isInt(args[0])) {
 						int timeArgument = Integer.parseInt(args[0]);
-						if (timeArgument < 24000 && timeArgument >= 0) {
+						if (timeArgument <= 24000 && timeArgument >= 0) {
 							player.getWorld().setTime(timeArgument);
 							player.sendMessage(ChatColor.AQUA + "Time set to " + timeArgument + ".");
 						}
+					} else {
+						player.sendMessage(ChatColor.RED + "Wrong time indication!");
+						player.sendMessage(ChatColor.AQUA + "Correct Use: /time day | night | {time indicator}");
 					}
 				}
 			} else {
