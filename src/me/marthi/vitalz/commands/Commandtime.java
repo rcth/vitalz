@@ -2,7 +2,6 @@ package me.marthi.vitalz.commands;
 
 import me.marthi.vitalz.vitalz;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -38,8 +37,14 @@ public class Commandtime implements CommandExecutor {
 						}
 					} else if (args[0].equalsIgnoreCase("night")) {
 						if (args[1] == null) {
-							player.getWorld().setTime(0);
-							player.sendMessage(ChatColor.AQUA + "Time set to 0.");
+							player.getWorld().setTime(12000);
+							player.sendMessage(ChatColor.AQUA + "Time set to 12000.");
+						}
+					} else if (isInt(args[0])) {
+						int timeArgument = Integer.parseInt(args[0]);
+						if (timeArgument < 24000 && timeArgument >= 0) {
+							player.getWorld().setTime(timeArgument);
+							player.sendMessage(ChatColor.AQUA + "Time set to " + timeArgument + ".");
 						}
 					}
 				}
@@ -54,5 +59,14 @@ public class Commandtime implements CommandExecutor {
 		}
 		return false;
 	}
-
+	
+	public static boolean isInt(String s) {
+	    try {
+	        Integer.parseInt(s);
+	    } catch (NumberFormatException nfe) {
+	        return false;
+	    }
+	    return true;
+	}
+	
 }
