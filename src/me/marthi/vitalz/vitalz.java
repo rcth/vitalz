@@ -18,7 +18,7 @@ public class vitalz extends JavaPlugin {
 		final PluginManager pm = this.getServer().getPluginManager();
 
 		System.out.println(ChatColor.RED + "[Vitalz]" + ChatColor.GOLD
-				+ "version [" + this.getDescription().getVersion()
+				+ "Version [" + this.getDescription().getVersion()
 				+ "] is enabled.");
 
 		getCommand("pl").setExecutor(new Commandpl(this));
@@ -27,6 +27,7 @@ public class vitalz extends JavaPlugin {
 		getCommand("vanish").setExecutor(new Commandvanish(this));
 		getCommand("fly").setExecutor(new Commandfly(this));
 		
+		System.out.println(ChatColor.RED + "[Vitalz]" + ChatColor.GOLD + "Commands registered");
 
 		super.onEnable();
 	}
@@ -34,7 +35,7 @@ public class vitalz extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		System.out.println(ChatColor.RED + "[Vitalz]" + ChatColor.GOLD
-				+ "version [" + this.getDescription().getVersion()
+				+ "Version [" + this.getDescription().getVersion()
 				+ "] is disabled.");
 		super.onDisable();
 	}
