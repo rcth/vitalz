@@ -1,17 +1,22 @@
 package me.marthi.vitalz;
 
+import java.util.List;
+
 import me.marthi.vitalz.commands.Commandfly;
 import me.marthi.vitalz.commands.Commandhelp;
 import me.marthi.vitalz.commands.Commandpl;
 import me.marthi.vitalz.commands.Commandtime;
 import me.marthi.vitalz.commands.Commandvanish;
 import me.marthi.vitalz.commands.Commandvitalz;
+import me.marthi.vitalz.listeners.LoginListener;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 
 public class vitalz extends JavaPlugin {
+	
+	public List<String> MOTD;
 
 	@Override
 	public void onEnable() {
@@ -28,6 +33,12 @@ public class vitalz extends JavaPlugin {
 		getCommand("time").setExecutor(new Commandtime(this));
 		
 		System.out.println("[Vitalz] Commands registered!");
+		
+		pm.registerEvents(new LoginListener(), this);
+		
+		
+		this.saveDefaultConfig();
+		this.getConfig().getStringList("motd");
 
 		super.onEnable();
 	}
