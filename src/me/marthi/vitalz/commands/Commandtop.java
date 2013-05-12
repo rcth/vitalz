@@ -26,6 +26,7 @@ public class Commandtop implements CommandExecutor {
 				Location loc = player.getPlayer().getLocation();				
 				int highest = player.getWorld().getHighestBlockYAt(loc);
 				loc.setY(highest);
+				player.teleport(loc);
 			} else {
 				player.sendMessage(ChatColor.RED + "You do not have access to that command!");
 				player.sendMessage(ChatColor.RED + "If you believe this is incorrect, contact an operator.");
