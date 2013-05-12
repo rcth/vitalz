@@ -23,7 +23,7 @@ public class Commandgamemode implements CommandExecutor {
 		Player player = (Player) sender;
 		if (sender instanceof Player) {
 			if (args[1] == null) {
-				//Set gamemode for yourself
+				//Set gamemode for yourself:
 				if (player.hasPermission("vitalz.gamemode")) {
 					if (args[0] == "1" || args[0] == "creative" || args[0] == "c") {
 						player.setGameMode(GameMode.CREATIVE);
@@ -38,7 +38,7 @@ public class Commandgamemode implements CommandExecutor {
 					}
 				}
 			} else {
-				//Set gamemode for others
+				//Set gamemode for others:
 				Player target = plugin.getServer().getPlayer(args[1]);
 				if (player.hasPermission("vitalz.gamemode.others")) {
 					if (args[0] == "1" || args[0] == "creative" || args[0] == "c") {
