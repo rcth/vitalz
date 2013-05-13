@@ -21,7 +21,7 @@ public class Commandtp implements CommandExecutor {
 			String label, String[] args) {
 		Player player = (Player)sender;
 		
-		if (args[0] != null) {
+		if (!args[0].isEmpty()) {
 			if (sender instanceof Player) {
 				if (player.hasPermission("vitalz.tp")) {
 					Player target = plugin.getServer().getPlayer(args[0]);
