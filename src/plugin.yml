@@ -23,3 +23,16 @@ commands:
     time:
       description: Set the time in a specific world
       usage: /<command> [day/morning/night/timestep] [world]
+    top:
+      description: Teleport you to the highest block at your location
+      usage: /<command>
+    ping:
+      description: You like pingpong too?
+      usage: /<command>
+    gamemode:
+      description: Change the gamemode of a specific player
+      usage: /<command> <0/1/2/survival/creative/adventure/s/c/a>
+      aliases: [gm, mode]
+    tp:
+      description: Teleport somebody to another player
+      usage: /<command> <target>
