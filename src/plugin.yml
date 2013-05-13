@@ -1,7 +1,7 @@
 name: Vitalz
 main: me.marthi.vitalz.vitalz
 version: 1
-authors: ["rcth", "ipsq"]
+authors: ["rcth", "ipsq", "jessedevries20"]
 description: Vitalz is the new Bukkit-core plugin with alot of useful commands
 commands:
     pl:
