@@ -25,36 +25,40 @@ public class Commandgamemode implements CommandExecutor {
 			if (args[1] == null) {
 				//Set gamemode for yourself:
 				if (player.hasPermission("vitalz.gamemode")) {
-					if (args[0] == "1" || args[0] == "creative" || args[0] == "c") {
+					if (args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {
 						player.setGameMode(GameMode.CREATIVE);
 					}
 					
-					if (args[0] == "0" || args[0] == "survival" || args[0] == "s") {
+					if (args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("s")) {
 						player.setGameMode(GameMode.SURVIVAL);
 					}
 					
-					if (args[0] == "2" || args[0] == "adventure" || args[0] == "a") {
+					if (args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("a")) {
 						player.setGameMode(GameMode.ADVENTURE);
 					}
 				}
 			} else {
 				//Set gamemode for others:
 				Player target = plugin.getServer().getPlayer(args[1]);
-				if (player.hasPermission("vitalz.gamemode.others")) {
-					if (args[0] == "1" || args[0] == "creative" || args[0] == "c") {
-						target.setGameMode(GameMode.CREATIVE);
-					}
-					
-					if (args[0] == "0" || args[0] == "survival" || args[0] == "s") {
-						target.setGameMode(GameMode.SURVIVAL);
-					}
-					
-					if (args[0] == "2" || args[0] == "adventure" || args[0] == "a") {
-						target.setGameMode(GameMode.ADVENTURE);
+				if (target != null) {
+					if (player.hasPermission("vitalz.gamemode.others")) {
+						if (args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {
+							target.setGameMode(GameMode.CREATIVE);
+						}
+						
+						if (args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("s")) {
+							target.setGameMode(GameMode.SURVIVAL);
+						}
+						
+						if (args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("a")) {
+							target.setGameMode(GameMode.ADVENTURE);
+						}
+					} else {
+						player.sendMessage(ChatColor.RED + "You do not have access to that command!");
+						player.sendMessage(ChatColor.RED + "If you believe this incorrect, contact an operator.");
 					}
 				} else {
-					player.sendMessage(ChatColor.RED + "You do not have access to that command!");
-					player.sendMessage(ChatColor.RED + "If you believe this incorrect, contact an operator.");
+					player.sendMessage(ChatColor.RED + "That player could not be found!");
 				}
 			}
 		} else {
