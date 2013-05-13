@@ -20,7 +20,24 @@ public class Commandtp implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
 		Player player = (Player)sender;
-		Player target = plugin.getServer().getPlayer(args[0]);
+		
+		if (args[0] != null) {
+			if (sender instanceof Player) {
+				if (player.hasPermission("vitalz.tp")) {
+					Player target = plugin.getServer().getPlayer(args[0]);
+					player.teleport(target);
+					player.sendMessage("Teleporting you to " + target);
+				} else {
+					player.sendMessage(ChatColor.RED + "You do not have access to that command!");
+					player.sendMessage(ChatColor.RED + "If you believe this is incorrect, contact an operator.");
+				}
+			} else {
+				System.out.println("A non-player tried to execute a player only command!");
+				System.out.println("The command was /tp");
+			}
+		} else{
+			player.sendMessage(ChatColor.RED + "You must specify a target.");
+		}
 		return false;
 	}
 	
