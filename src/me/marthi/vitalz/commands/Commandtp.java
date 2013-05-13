@@ -25,8 +25,12 @@ public class Commandtp implements CommandExecutor {
 			if (sender instanceof Player) {
 				if (player.hasPermission("vitalz.tp")) {
 					Player target = plugin.getServer().getPlayer(args[0]);
-					player.teleport(target);
-					player.sendMessage("Teleporting you to " + target);
+					if (target != null) {
+						player.teleport(target);
+						player.sendMessage("Teleporting you to " + target);
+					} else {
+						player.sendMessage(ChatColor.RED + "That player could not be found!");
+					}
 				} else {
 					player.sendMessage(ChatColor.RED + "You do not have access to that command!");
 					player.sendMessage(ChatColor.RED + "If you believe this is incorrect, contact an operator.");
