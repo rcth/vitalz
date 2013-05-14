@@ -21,8 +21,8 @@ public class Commandgamemode implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
 		Player player = (Player) sender;
-		if (sender instanceof Player) {
-			if (args[1].isEmpty()) {
+		if (sender instanceof Player) {				
+			if (!(args.length > 1)) {
 				//Set gamemode for yourself:
 				if (player.hasPermission("vitalz.gamemode")) {
 					if (args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {
