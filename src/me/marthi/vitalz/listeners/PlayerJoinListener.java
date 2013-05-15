@@ -17,10 +17,6 @@ public class PlayerJoinListener implements Listener {
 		this.plugin = plugin;
 	}
 
-	public PlayerJoinListener() {
-
-	}
-
 	@EventHandler(priority = EventPriority.LOW)
 	public void playerJoinListener(PlayerJoinEvent e) {
 		Player player = e.getPlayer();

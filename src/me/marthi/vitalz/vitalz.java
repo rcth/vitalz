@@ -46,7 +46,7 @@ public class vitalz extends JavaPlugin {
 
 		System.out.println("[Vitalz] Commands registered!");
 
-		pm.registerEvents(new PlayerJoinListener(), this);
+		pm.registerEvents(new PlayerJoinListener(this), this);
 
 		this.saveDefaultConfig();
 		MOTD = this.getConfig().getStringList("motd");
