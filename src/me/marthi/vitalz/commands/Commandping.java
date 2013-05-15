@@ -18,9 +18,12 @@ public class Commandping implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
-		Player player = (Player) sender;
-		
-		player.sendMessage("Pong. You like Ping-Pong too?");
-		return false;
+		if (sender instanceof Player) {
+			Player player = (Player) sender;
+			player.sendMessage("Pong. You like Ping-Pong too?");
+		} else {
+			System.out.println("Pong. You like Ping-Pong too?");
+		}
+		return true;
 	}
 }

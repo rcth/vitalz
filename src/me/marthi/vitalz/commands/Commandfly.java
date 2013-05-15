@@ -65,7 +65,7 @@ public class Commandfly implements CommandExecutor {
 					.println("A non-player tried to execute a player only command!");
 			System.out.println("The command was /fly");
 		}
-		return false;
+		return true;
 	}
 
 }

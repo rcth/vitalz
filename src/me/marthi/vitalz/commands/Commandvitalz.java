@@ -22,7 +22,7 @@ public class Commandvitalz implements CommandExecutor {
 					+ plugin.getDescription().getVersion());
 			sender.sendMessage("Commands to be displayed here!");
 		}
-		return false;
+		return true;
 	}
 
 }

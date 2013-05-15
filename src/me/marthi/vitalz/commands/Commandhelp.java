@@ -18,7 +18,7 @@ public class Commandhelp implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }

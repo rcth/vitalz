@@ -107,7 +107,7 @@ public class Commandtime implements CommandExecutor {
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 	public static boolean isInt(String s) {

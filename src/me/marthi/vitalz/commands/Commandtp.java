@@ -42,7 +42,7 @@ public class Commandtp implements CommandExecutor {
 		} else{
 			player.sendMessage(ChatColor.RED + "You must specify a target.");
 		}
-		return false;
+		return true;
 	}
 	
 

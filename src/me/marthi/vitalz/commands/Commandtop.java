@@ -37,7 +37,7 @@ public class Commandtop implements CommandExecutor {
 					.println("A non-player tried to execute a player-only command!");
 			System.out.println("The command was /top");
 		}
-		return false;
+		return true;
 	}
 
 }

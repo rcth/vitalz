@@ -25,10 +25,12 @@ public class LoginListener implements Listener {
 	@EventHandler(priority = EventPriority.LOW)
 	public void playerLoginListener(PlayerLoginEvent e) {
 		Player player = e.getPlayer();
-		Iterator<String> motdMessages = plugin.MOTD.iterator();
-		while (motdMessages.hasNext()) {
-			String motdMessage = motdMessages.next();
-			player.sendMessage(motdMessage);
+		
+		//NOTE: Iterator empty. Add check please!
+		
+		//Iterator<String> motdMessages = plugin.MOTD.iterator();
+		//while (motdMessages.hasNext()) {
+		//	String motdMessage = motdMessages.next();
+		//	player.sendMessage(motdMessage);
 		}
-	}
 }

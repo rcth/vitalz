@@ -65,7 +65,7 @@ public class Commandgamemode implements CommandExecutor {
 			System.out.println("A non-player tried to execute a player only command!");
 			System.out.println("The command was /gamemode");
 		}
-		return false;
+		return true;
 	}
 
 }
