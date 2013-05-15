@@ -26,6 +26,7 @@ public class Commandtop implements CommandExecutor {
 				int highest = player.getWorld().getHighestBlockYAt(loc);
 				loc.setY(highest);
 				player.teleport(loc);
+				return true;
 			} else {
 				player.sendMessage(ChatColor.RED
 						+ "You do not have access to that command!");
@@ -37,7 +38,7 @@ public class Commandtop implements CommandExecutor {
 					.println("A non-player tried to execute a player-only command!");
 			System.out.println("The command was /top");
 		}
-		return true;
+		return false;
 	}
 
 }

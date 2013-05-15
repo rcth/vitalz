@@ -27,12 +27,14 @@ public class Commandvanish implements CommandExecutor {
 					for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 						p.hidePlayer(player);
 					}
+					return true;
 				} else {
 					Player target = Bukkit.getPlayer(args[0]);
 					if (target != null) {
 						for (Player t : Bukkit.getServer().getOnlinePlayers()) {
 							t.hidePlayer(target);
 						}
+						return true;
 					} else {
 						player.sendMessage(ChatColor.RED + "That player could not be found!");
 					}
@@ -46,7 +48,7 @@ public class Commandvanish implements CommandExecutor {
 					.println("A non-player tried to execute a player only command!");
 			System.out.println("The command was /vanish");
 		}
-		return true;
+		return false;
 	}
 
 }

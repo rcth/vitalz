@@ -27,14 +27,17 @@ public class Commandgamemode implements CommandExecutor {
 				if (player.hasPermission("vitalz.gamemode")) {
 					if (args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {
 						player.setGameMode(GameMode.CREATIVE);
+						return true;
 					}
 					
 					if (args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("s")) {
 						player.setGameMode(GameMode.SURVIVAL);
+						return true;
 					}
 					
 					if (args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("a")) {
 						player.setGameMode(GameMode.ADVENTURE);
+						return true;
 					}
 				}
 			} else {
@@ -44,14 +47,17 @@ public class Commandgamemode implements CommandExecutor {
 					if (player.hasPermission("vitalz.gamemode.others")) {
 						if (args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {
 							target.setGameMode(GameMode.CREATIVE);
+							return true;
 						}
 						
 						if (args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("s")) {
 							target.setGameMode(GameMode.SURVIVAL);
+							return true;
 						}
 						
 						if (args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("a")) {
 							target.setGameMode(GameMode.ADVENTURE);
+							return true;
 						}
 					} else {
 						player.sendMessage(ChatColor.RED + "You do not have access to that command!");
@@ -65,7 +71,7 @@ public class Commandgamemode implements CommandExecutor {
 			System.out.println("A non-player tried to execute a player only command!");
 			System.out.println("The command was /gamemode");
 		}
-		return true;
+		return false;
 	}
 
 }

@@ -31,15 +31,18 @@ public class Commandfly implements CommandExecutor {
 						player.setFlying(false);
 						player.setAllowFlight(false);
 						allowedFly.remove(player);
+						return true;
 					} else {
 						player.setAllowFlight(true);
 						player.setFlying(true);
 						allowedFly.add(player);
+						return true;
 					}
 				} else if (args[0].equalsIgnoreCase("stop")) {
 					player.setFlying(false);
 					player.setAllowFlight(false);
 					allowedFly.remove(player);
+					return true;
 				} else {
 					Player target = Bukkit.getPlayer(args[0]);
 					if (target != null) {
@@ -47,10 +50,12 @@ public class Commandfly implements CommandExecutor {
 							target.setFlying(false);
 							target.setAllowFlight(false);
 							allowedFly.remove(target);
+							return true;
 						} else {
 							target.setAllowFlight(true);
 							target.setFlying(true);
 							allowedFly.add(target);
+							return true;
 						}
 					} else {
 						player.sendMessage(ChatColor.RED + "That player could not be found!");
@@ -65,7 +70,7 @@ public class Commandfly implements CommandExecutor {
 					.println("A non-player tried to execute a player only command!");
 			System.out.println("The command was /fly");
 		}
-		return true;
+		return false;
 	}
 
 }

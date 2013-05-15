@@ -28,6 +28,7 @@ public class Commandtp implements CommandExecutor {
 					if (target != null) {
 						player.teleport(target);
 						player.sendMessage("Teleporting you to " + target);
+						return true;
 					} else {
 						player.sendMessage(ChatColor.RED + "That player could not be found!");
 					}
@@ -42,7 +43,7 @@ public class Commandtp implements CommandExecutor {
 		} else{
 			player.sendMessage(ChatColor.RED + "You must specify a target.");
 		}
-		return true;
+		return false;
 	}
 	
 

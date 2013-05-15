@@ -30,6 +30,7 @@ public class Commandtime implements CommandExecutor {
 							+ time + ".");
 					player.sendMessage(ChatColor.RED
 							+ "Insufficient Arguments!");
+					return true;
 				} else {
 					if ((args[0].equalsIgnoreCase("day"))
 							|| args[0].equalsIgnoreCase("morning")) {
@@ -37,6 +38,7 @@ public class Commandtime implements CommandExecutor {
 							player.getWorld().setTime(0);
 							player.sendMessage(ChatColor.AQUA
 									+ "Time set to 0.");
+							return true;
 						} else {
 							World targetWorld = plugin.getServer().getWorld(
 									args[1]);
@@ -45,6 +47,7 @@ public class Commandtime implements CommandExecutor {
 								player.sendMessage(ChatColor.AQUA
 										+ "Time set to 0 in world "
 										+ targetWorld.toString() + ".");
+								return true;
 							} else {
 								player.sendMessage(ChatColor.RED
 										+ "The world: " + args[1].toString()
@@ -56,6 +59,7 @@ public class Commandtime implements CommandExecutor {
 							player.getWorld().setTime(12000);
 							player.sendMessage(ChatColor.AQUA
 									+ "Time set to 12000.");
+							return true;
 						}
 					} else if (isInt(args[0])) {
 						int timeArgument = Integer.parseInt(args[0]);
@@ -63,6 +67,7 @@ public class Commandtime implements CommandExecutor {
 							player.getWorld().setTime(timeArgument);
 							player.sendMessage(ChatColor.AQUA + "Time set to "
 									+ timeArgument + ".");
+							return true;
 						}
 					} else {
 						player.sendMessage(ChatColor.RED
@@ -88,17 +93,20 @@ public class Commandtime implements CommandExecutor {
 						targetWorld.setTime(0);
 						System.out.println("Time set to 0 in world: "
 								+ targetWorld.toString() + ".");
+						return true;
 					} else if ((args[0].equalsIgnoreCase("night"))
 							|| (args[0].equalsIgnoreCase("evening"))) {
 						targetWorld.setTime(12000);
 						System.out.println("Time set to 12000 in world: "
 								+ targetWorld.toString() + ".");
+						return true;
 					} else if (isInt(args[0])) {
 						int timeArgument = Integer.parseInt(args[0]);
 						if (timeArgument <= 24000 && timeArgument >= 0) {
 							targetWorld.setTime(timeArgument);
 							System.out.println("Time set to " + timeArgument
 									+ ".");
+							return true;
 						}
 					}
 				} else {
@@ -107,7 +115,7 @@ public class Commandtime implements CommandExecutor {
 				}
 			}
 		}
-		return true;
+		return false;
 	}
 
 	public static boolean isInt(String s) {
