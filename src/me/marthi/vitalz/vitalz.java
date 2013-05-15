@@ -15,7 +15,7 @@ import me.marthi.vitalz.commands.Commandping;
 import me.marthi.vitalz.commands.Commandgamemode;
 //import me.marthi.vitalz.commands.Commandtp;
 
-import me.marthi.vitalz.listeners.LoginListener;
+import me.marthi.vitalz.listeners.PlayerJoinListener;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -46,7 +46,7 @@ public class vitalz extends JavaPlugin {
 
 		System.out.println("[Vitalz] Commands registered!");
 
-		pm.registerEvents(new LoginListener(), this);
+		pm.registerEvents(new PlayerJoinListener(), this);
 
 		this.saveDefaultConfig();
 		MOTD = this.getConfig().getStringList("motd");

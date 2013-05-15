@@ -6,27 +6,28 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 
-public class LoginListener implements Listener {
+public class PlayerJoinListener implements Listener {
 
 	private vitalz plugin;
 
-	public LoginListener(vitalz plugin) {
+	public PlayerJoinListener(vitalz plugin) {
 		this.plugin = plugin;
 	}
 
-	public LoginListener() {
+	public PlayerJoinListener() {
 
 	}
 
 	@EventHandler(priority = EventPriority.LOW)
-	public void playerLoginListener(PlayerLoginEvent e) {
+	public void playerJoinListener(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
-		if (!plugin.MOTD.isEmpty()) {
+		/*if (!plugin.MOTD.isEmpty()) {
 			for (String s : plugin.MOTD) {
 				player.sendMessage(s);
 			}
-		}
+		}*/
 	}
 }
