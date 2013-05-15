@@ -31,6 +31,7 @@ public class Commandbroadcast implements CommandExecutor {
 
 			Bukkit.broadcastMessage(ChatColor.GOLD + "[Broadcast]"
 					+ broadcastMessage);
+			return true;
 		}
 
 		else {
@@ -40,6 +41,6 @@ public class Commandbroadcast implements CommandExecutor {
 					+ "If you believe this is incorrect, contact an operator.");
 		}
 
-		return true;
+		return false;
 	}
 }

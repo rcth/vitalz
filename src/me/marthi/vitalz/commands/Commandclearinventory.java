@@ -47,5 +47,4 @@ public class Commandclearinventory implements CommandExecutor {
 		}
 		return false;
 	}
-
 }
