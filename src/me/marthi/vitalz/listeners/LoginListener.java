@@ -23,7 +23,7 @@ public class LoginListener implements Listener {
 	@EventHandler(priority = EventPriority.LOW)
 	public void playerLoginListener(PlayerLoginEvent e) {
 		Player player = e.getPlayer();
-		if (plugin.MOTD.size() != 0) {
+		if (!plugin.MOTD.isEmpty()) {
 
 			for (String s : plugin.MOTD) {
 				player.sendMessage(s);
