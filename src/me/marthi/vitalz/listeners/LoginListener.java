@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 
 public class LoginListener implements Listener {
-	
+
 	private vitalz plugin;
 
 	public LoginListener(vitalz plugin) {
@@ -17,15 +17,18 @@ public class LoginListener implements Listener {
 	}
 
 	public LoginListener() {
-		
+
 	}
 
 	@EventHandler(priority = EventPriority.LOW)
 	public void playerLoginListener(PlayerLoginEvent e) {
 		Player player = e.getPlayer();
-		
-		for (String s : plugin.MOTD){
-			player.sendMessage(s);
+		if (plugin.MOTD.size() != 0) {
+
+			for (String s : plugin.MOTD) {
+				player.sendMessage(s);
+			}
+
 		}
 	}
 }
