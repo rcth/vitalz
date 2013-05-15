@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 
 public class Commandbroadcast implements CommandExecutor {
 
+	@SuppressWarnings("unused")
 	private vitalz plugin;
 
 	public Commandbroadcast(vitalz plugin) {
@@ -28,7 +29,6 @@ public class Commandbroadcast implements CommandExecutor {
 			for (int i = 0; i < args.length; i++) {
 				broadcastMessage = broadcastMessage + " " + args[i];
 			}
-
 			Bukkit.broadcastMessage(ChatColor.GOLD + "[Broadcast]"
 					+ broadcastMessage);
 			return true;
@@ -40,7 +40,6 @@ public class Commandbroadcast implements CommandExecutor {
 			sender.sendMessage(ChatColor.RED
 					+ "If you believe this is incorrect, contact an operator.");
 		}
-
 		return false;
 	}
 }

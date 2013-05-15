@@ -24,11 +24,9 @@ public class LoginListener implements Listener {
 	public void playerLoginListener(PlayerLoginEvent e) {
 		Player player = e.getPlayer();
 		if (!plugin.MOTD.isEmpty()) {
-
 			for (String s : plugin.MOTD) {
 				player.sendMessage(s);
 			}
-
 		}
 	}
 }
