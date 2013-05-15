@@ -25,7 +25,7 @@ public class Commandtime implements CommandExecutor {
 
 		if (sender instanceof Player) {
 			if (player.hasPermission("vitalz.time")) {
-				if (args[0] == null) {
+				if (args[0].isEmpty()) {
 					player.sendMessage(ChatColor.AQUA + "Current time is: "
 							+ time + ".");
 					player.sendMessage(ChatColor.RED
@@ -34,7 +34,7 @@ public class Commandtime implements CommandExecutor {
 				} else {
 					if ((args[0].equalsIgnoreCase("day"))
 							|| args[0].equalsIgnoreCase("morning")) {
-						if (args[1] == null) {
+						if (args[1].isEmpty()) {
 							player.getWorld().setTime(0);
 							player.sendMessage(ChatColor.AQUA
 									+ "Time set to 0.");
@@ -55,7 +55,7 @@ public class Commandtime implements CommandExecutor {
 							}
 						}
 					} else if (args[0].equalsIgnoreCase("night")) {
-						if (args[1] == null) {
+						if (args[1].isEmpty()) {
 							player.getWorld().setTime(12000);
 							player.sendMessage(ChatColor.AQUA
 									+ "Time set to 12000.");
@@ -83,7 +83,7 @@ public class Commandtime implements CommandExecutor {
 						+ "If you believe this is incorrect, contact an operator.");
 			}
 		} else {
-			if (args[1] == null) {
+			if (args[1].isEmpty()) {
 				System.out.println("You did not specify a world!");
 			} else {
 				World targetWorld = plugin.getServer().getWorld(args[1]);
