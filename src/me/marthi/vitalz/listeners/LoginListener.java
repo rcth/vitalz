@@ -1,7 +1,5 @@
 package me.marthi.vitalz.listeners;
 
-import java.util.Iterator;
-
 import me.marthi.vitalz.vitalz;
 
 import org.bukkit.entity.Player;
@@ -26,11 +24,8 @@ public class LoginListener implements Listener {
 	public void playerLoginListener(PlayerLoginEvent e) {
 		Player player = e.getPlayer();
 		
-		//NOTE: Iterator empty. Add check please!
-		
-		//Iterator<String> motdMessages = plugin.MOTD.iterator();
-		//while (motdMessages.hasNext()) {
-		//	String motdMessage = motdMessages.next();
-		//	player.sendMessage(motdMessage);
+		for (String s : plugin.MOTD){
+			player.sendMessage(s);
 		}
+	}
 }
