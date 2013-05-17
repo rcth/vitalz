@@ -2,7 +2,7 @@ package me.marthi.vitalz;
 
 import java.util.List;
 
-//import me.marthi.vitalz.commands.Commandbroadcast;
+import me.marthi.vitalz.commands.Commandbroadcast;
 //import me.marthi.vitalz.commands.Commandclearinventory;
 import me.marthi.vitalz.commands.Commandfly;
 import me.marthi.vitalz.commands.Commandhelp;
@@ -41,7 +41,7 @@ public class vitalz extends JavaPlugin {
 		getCommand("ping").setExecutor(new Commandping(this));
 		getCommand("gamemode").setExecutor(new Commandgamemode(this));
 		//getCommand("tp").setExecutor(new Commandtp(this));
-		//getCommand("broadcast").setExecutor(new Commandbroadcast(this));
+		getCommand("broadcast").setExecutor(new Commandbroadcast(this));
 		//getCommand("clearinventory").setExecutor(new Commandclearinventory(this));
 
 		System.out.println("[Vitalz] Commands registered!");
