@@ -40,6 +40,7 @@ public class vitalz extends JavaPlugin {
 		getCommand("top").setExecutor(new Commandtop(this));
 		getCommand("ping").setExecutor(new Commandping(this));
 		getCommand("gamemode").setExecutor(new Commandgamemode(this));
+		getCommand("gm").setExecutor(new Commandgamemode(this));
 		//getCommand("tp").setExecutor(new Commandtp(this));
 		getCommand("broadcast").setExecutor(new Commandbroadcast(this));
 		//getCommand("clearinventory").setExecutor(new Commandclearinventory(this));

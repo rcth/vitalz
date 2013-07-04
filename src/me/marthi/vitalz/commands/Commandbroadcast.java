@@ -30,7 +30,7 @@ public class Commandbroadcast implements CommandExecutor {
 				broadcastMessage = broadcastMessage + " " + args[i];
 			}
 			Bukkit.broadcastMessage(ChatColor.GOLD + "[Broadcast]"
-					+ broadcastMessage);
+					+ ChatColor.RED + broadcastMessage);
 			return true;
 		}
 

@@ -28,7 +28,7 @@ public class Commandtp implements CommandExecutor {
 					Player target = plugin.getServer().getPlayer(args[0]);
 					if (target != null) {
 						player.teleport(target);
-						player.sendMessage("Teleporting you to " + target);
+						player.sendMessage(ChatColor.GOLD + "Teleporting you to " + ChatColor.AQUA + target);
 						return true;
 					} else {
 						try {
