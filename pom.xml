@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Vitalz</groupId>
   <artifactId>Vitalz</artifactId>
-  <version>1.0.9</version>
+  <version>1.1.0</version>
   <name>Vitalz</name>
   <description>Vitalz Project</description>
   <build>
@@ -34,19 +34,10 @@
     </repository>
   </repositories>
   <dependencies>
-  	<!-- Dependency information --> 
-    <dependency>
-    	<groupId>org.bukkit</groupId>
-        <artifactId>bukkit</artifactId>
-    </dependency>
+  	<dependency>
+  		<groupId>org.bukkit</groupId>
+  		<artifactId>bukkit</artifactId>
+  		<version>1.6.4-R2.0</version>
+  	</dependency>
   </dependencies>
-  <dependencyManagement>
-  	<dependencies>
-  		<dependency>
-  			<groupId>org.bukkit</groupId>
-  			<artifactId>bukkit</artifactId>
-  			<version>1.5.2-R0.2-SNAPSHOT</version>
-  		</dependency>
-  	</dependencies>
-  </dependencyManagement>
 </project>
